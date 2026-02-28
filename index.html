@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEJORADAL4 | Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --discord-dark: #313338;
+            --discord-darker: #2b2d31;
+            --discord-black: #1e1f22;
+            --discord-blurple: #5865f2;
+            --discord-text: #dbdee1;
+            --discord-muted: #949ba4;
+        }
+
+        body {
+            background-color: var(--discord-darker);
+            color: var(--discord-text);
+            font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .nav-button {
+            background-color: var(--discord-dark);
+            color: var(--discord-text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-button:hover {
+            background-color: var(--discord-black);
+            color: white;
+        }
+
+        .nav-button.active {
+            background-color: var(--discord-blurple);
+            color: white;
+        }
+
+        .card {
+            background-color: var(--discord-dark);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .view-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .view-section.active {
+            display: block;
+            animation: fadeInUp 0.4s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-tag {
+            background-color: var(--discord-black);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--discord-muted);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- Encabezado principal -->
+        <header class="text-center mb-10">
+            <h1 class="text-white text-xl font-mono tracking-widest uppercase mb-4 opacity-50">Mejoradal4 Portfolio</h1>
+            <h2 class="text-5xl md:text-6xl font-black text-white mb-2 tracking-tight">MEJORADAL4</h2>
+            <p class="text-zinc-400 text-lg mb-2">Community Manager & Discord Servers Expert</p>
+            <p class="text-zinc-500 text-sm italic mb-8">I love Roblox Roleplays</p>
+
+            <!-- Botones de navegación -->
+            <nav class="flex flex-wrap justify-center gap-3">
+                <div class="nav-button active" onclick="switchView('home', this)">
+                    <i class="fas fa-home"></i> Home
+                </div>
+                <div class="nav-button" onclick="switchView('about', this)">
+                    <i class="fas fa-user"></i> About Me
+                </div>
+                <div class="nav-button" onclick="switchView('experience', this)">
+                    <i class="fas fa-briefcase"></i> Experience
+                </div>
+                <div class="nav-button" onclick="switchView('skills', this)">
+                    <i class="fas fa-bolt"></i> Skills & Expertise
+                </div>
+                <div class="nav-button" onclick="switchView('projects', this)">
+                    <i class="fas fa-folder-open"></i> Projects
+                </div>
+                <div class="nav-button" onclick="switchView('discord', this)">
+                    <i class="fab fa-discord"></i> Discord Servers
+                </div>
+            </nav>
+        </header>
+
+        <!-- Contenido dinámico -->
+        <div id="content-wrapper">
+            
+            <!-- SECCIÓN: INICIO (HOME) -->
+            <section id="home" class="view-section active">
+                <div class="card text-center py-12">
+                    <h3 class="text-3xl font-bold text-white mb-6 tracking-tight">Welcome to my Portfolio</h3>
+                    
+                    <div class="max-w-xl mx-auto space-y-6">
+                        <div class="p-5 bg-zinc-900/40 rounded-xl border border-white/5">
+                            <p class="text-zinc-300 leading-relaxed mb-4">
+                                If you wish to contact me, please head over to the <span class="text-white font-bold cursor-pointer underline decoration-[#5865f2]" onclick="switchView('discord', document.querySelectorAll('.nav-button')[5])">Discord Servers</span> section. 
+                            </p>
+                            <p class="text-zinc-400 text-sm">
+                                Join the correct server and look for my username to get in touch.
+                            </p>
+                        </div>
+
+                        <div class="pt-4">
+                            <p class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">Roblox Profile</p>
+                            <a href="https://www.roblox.com/users/2484331970/profile" target="_blank" class="inline-flex items-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-xl font-bold transition-all border border-white/5 group">
+                                <i class="fas fa-user-circle text-xl group-hover:scale-110 transition-transform"></i>
+                                VIEW ROBLOX PROFILE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: SOBRE MÍ (ABOUT ME) -->
+            <section id="about" class="view-section">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-white mb-6">Profile Overview</h3>
+                    <p class="text-zinc-300 leading-relaxed text-lg italic">
+                        I am a professional Community Manager and expert Discord Server Creator with a focus on building secure and high-quality communities. My experience lies in advanced moderation, scam prevention, and community architecture, ensuring safe spaces for users. Beyond management, I am a passionate Roblox developer currently leading projects like 'The Obby' and assembling a professional team for a future Spain-themed Roleplay city project. I am a helpful leader and an expert in configuring bots, dedicated to helping the community as much as I can.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: EXPERIENCIA (EXPERIENCE) -->
+            <section id="experience" class="view-section">
+                <div class="card flex items-center justify-center py-20 border-dashed border-2 border-zinc-700">
+                    <div class="text-center">
+                        <i class="fas fa-clock text-4xl text-zinc-600 mb-4"></i>
+                        <h3 class="text-zinc-400 font-bold text-2xl tracking-widest uppercase">Coming soon</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: HABILIDADES (SKILLS) -->
+            <section id="skills" class="view-section">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Perfil y Moderación -->
+                    <div class="card">
+                        <h3 class="text-zinc-500 text-xs font-bold uppercase mb-4 tracking-widest">Management & Leadership</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                            A highly professional lead with a proven track record in community management. I approach every task with a deep sense of responsibility, empathy, and strong leadership.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag text-[#5865f2]">Experienced Moderator</span>
+                            <span class="skill-tag text-emerald-400">Helpful & Supportive</span>
+                            <span class="skill-tag text-purple-400">Leadership</span>
+                            <span class="skill-tag">Professionalism</span>
+                        </div>
+                    </div>
+
+                    <!-- Seguridad y Maestría en Discord -->
+                    <div class="card">
+                        <h3 class="text-zinc-500 text-xs font-bold uppercase mb-4 tracking-widest">Security & Discord Mastery</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                            An expert server creator. I possess a natural talent for detecting scams and go above and beyond to ensure every server is as secure as possible by configuring advanced bots.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag text-red-400">Scam Detection Expert</span>
+                            <span class="skill-tag text-amber-400">Expert Server Creator</span>
+                            <span class="skill-tag">Bot Configuration</span>
+                            <span class="skill-tag">Community Architect</span>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="card md:col-span-2">
+                        <h3 class="text-zinc-500 text-xs font-bold uppercase mb-4 tracking-widest">Interests & Hobbies</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">
+                            Passionate about the Roblox ecosystem, especially Roleplay (RP) games. This allows me to understand community dynamics from both a developer and staff perspective simultaneously.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: PROYECTOS (PROJECTS) -->
+            <section id="projects" class="view-section">
+                <div class="space-y-6">
+                    <div class="card bg-gradient-to-r from-zinc-800/50 to-transparent border-l-4 border-l-[#5865f2]">
+                        <h3 class="text-white font-bold text-xl mb-4">Upcoming Ventures & Recruitment</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                            I am currently developing 'The Obby' and planning a high-quality Spain-themed City Roleplay. I am actively looking for talented developers: Builders, Modelers, and Scripters. 
+                        </p>
+                        <div class="p-4 bg-zinc-900/50 rounded-lg border border-white/5 flex items-center gap-4">
+                            <i class="fab fa-discord text-2xl text-[#5865f2]"></i>
+                            <p class="text-sm text-zinc-400">Contact me via Discord if you're interested in joining the team.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Proyecto Obby -->
+                        <div class="card flex flex-col hover:border-[#5865f2]/50 transition-all">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-white font-bold text-lg">The Obby</h4>
+                                <span class="px-2 py-1 bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase rounded">In Development</span>
+                            </div>
+                            <p class="text-zinc-400 text-sm mb-6 flex-grow">
+                                Minimal features currently. Seeking dedicated builders and scripters to polish the experience.
+                            </p>
+                            <a href="https://www.roblox.com/games/17181576693/The-obby" target="_blank" class="w-full bg-zinc-700 hover:bg-zinc-600 text-white text-xs py-3 rounded font-bold text-center transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-play"></i> PLAY ON ROBLOX
+                            </a>
+                        </div>
+
+                        <!-- Spain City Roleplay -->
+                        <div class="card flex flex-col hover:border-emerald-500/50 transition-all border-dashed">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-white font-bold text-lg">Spain City Roleplay</h4>
+                                <span class="px-2 py-1 bg-[#5865f2]/10 text-[#5865f2] text-[10px] font-bold uppercase rounded">Top Priority</span>
+                            </div>
+                            <p class="text-zinc-300 text-sm font-semibold mb-2">Major Project Plan</p>
+                            <p class="text-zinc-400 text-sm mb-6 flex-grow">
+                                Assembling a high-tier team to bring a realistic Spanish city to life. Status: Hiring core team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: SERVIDORES DE DISCORD -->
+            <section id="discord" class="view-section">
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="text-[#5865f2] text-xs font-bold uppercase mb-6 tracking-widest">Project Ecosystem</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-3 bg-zinc-900/40 p-3 rounded-lg border border-white/5">
+                                <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-crown text-yellow-500"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-sm">mejoradal4</p>
+                                    <p class="text-zinc-500 text-xs">Development & Security Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Server Card: The Creators -->
+                        <div class="card flex flex-col">
+                            <div class="flex items-center gap-5 mb-6">
+                                <div class="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl font-bold text-[#5865f2]">
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-xl tracking-tight">The Creators</h3>
+                                    <p class="text-xs text-zinc-500 font-mono">Verified Community</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-grow space-y-4 text-zinc-400 leading-relaxed text-xs">
+                                <p>Central hub for Roblox enthusiasts and professionals:</p>
+                                <ul class="list-disc ml-4 space-y-1">
+                                    <li>Developer recruitment.</li>
+                                    <li>Roblox ecosystem discussions.</li>
+                                    <li>Scam alerts through security logs.</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-6 flex flex-col gap-2">
+                                <a href="https://discord.ly/the-creators-6858" target="_blank" class="bg-zinc-800 hover:bg-zinc-700 text-white flex items-center justify-center gap-2 rounded-lg font-bold transition-all p-3 text-xs border border-white/5">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    CREATOR HUB LINK
+                                </a>
+                                <a href="https://discord.gg/gE7CETrNEk" target="_blank" class="bg-[#5865f2] hover:bg-[#4752c4] text-white flex items-center justify-center gap-2 rounded-lg font-bold transition-all p-3 text-sm">
+                                    <i class="fab fa-discord"></i>
+                                    JOIN DISCORD SERVER
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Server Card: Mejo Studios -->
+                        <div class="card flex flex-col">
+                            <div class="flex items-center gap-5 mb-6">
+                                <div class="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl font-bold text-emerald-500">
+                                    <i class="fas fa-hammer"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-xl tracking-tight">Mejo Studios</h3>
+                                    <p class="text-xs text-zinc-500 font-mono">Development Server</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-grow space-y-4 text-zinc-400 leading-relaxed text-xs">
+                                <p>The home for my personal projects and future releases:</p>
+                                <ul class="list-disc ml-4 space-y-1">
+                                    <li>Updates on my upcoming Roblox games.</li>
+                                    <li>Progress on the **Obby**.</li>
+                                    <li>Exclusive tester community.</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-6 flex flex-col gap-2">
+                                <a href="https://discord.ly/city-border" target="_blank" class="bg-zinc-800 hover:bg-zinc-700 text-white flex items-center justify-center gap-2 rounded-lg font-bold transition-all p-3 text-xs border border-white/5">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    CREATOR HUB LINK
+                                </a>
+                                <a href="https://discord.gg/K3UaHsAsJv" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 rounded-lg font-bold transition-all p-3 text-sm">
+                                    <i class="fab fa-discord"></i>
+                                    JOIN DISCORD SERVER
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de contacto -->
+                    <div class="card">
+                        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                            <div>
+                                <p class="text-xs text-zinc-500 font-bold uppercase mb-1">Discord Username</p>
+                                <p class="text-white font-mono text-lg">mejoradal4</p>
+                            </div>
+                            <button class="w-full md:w-auto bg-zinc-700 hover:bg-zinc-600 text-white text-xs px-6 py-3 rounded font-bold transition-all" onclick="copyUser()">
+                                COPY USERNAME
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            MEJORADAL4 // Version v3.7 // 2026
+        </footer>
+    </main>
+
+    <script>
+        function switchView(viewId, element) {
+            document.querySelectorAll('.view-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(viewId).classList.add('active');
+            element.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function copyUser() {
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = "mejoradal4";
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            
+            const btn = document.querySelector('button[onclick="copyUser()"]');
+            const originalText = btn.innerText;
+            btn.innerText = "COPIED!";
+            btn.classList.replace('bg-zinc-700', 'bg-[#23a55a]');
+            setTimeout(() => { 
+                btn.innerText = originalText; 
+                btn.classList.replace('bg-[#23a55a]', 'bg-zinc-700');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
